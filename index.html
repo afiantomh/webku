@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOLARIS QUANTUM - Sistem PLTS Generasi Masa Depan</title>
+<title>SOLARIS QUANTUM - Sistem PLTS Premium LiFePO4</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -220,6 +220,8 @@ text-transform:uppercase;
 letter-spacing:1px;
 transition:all 0.3s;
 box-shadow:0 10px 40px rgba(0,243,255,0.4);
+text-decoration:none;
+display:inline-block;
 }
 .btn-primary:hover{
 transform:translateY(-3px);
@@ -237,6 +239,8 @@ cursor:pointer;
 text-transform:uppercase;
 letter-spacing:1px;
 transition:all 0.3s;
+text-decoration:none;
+display:inline-block;
 }
 .btn-secondary:hover{
 background:rgba(0,243,255,0.1);
@@ -303,9 +307,8 @@ text-transform:uppercase;
 letter-spacing:1px;
 }
 
-/* Tech Features */
-.features{
-padding:6rem 2rem;
+/* Section Styling */
+section{
 position:relative;
 z-index:2;
 }
@@ -325,6 +328,11 @@ margin-bottom:1rem;
 .section-subtitle{
 font-size:1.2rem;
 color:rgba(255,255,255,0.6);
+}
+
+/* Features */
+.features{
+padding:6rem 2rem;
 }
 .features-grid{
 max-width:1400px;
@@ -363,7 +371,7 @@ border-color:var(–neon-cyan);
 box-shadow:0 20px 60px rgba(0,243,255,0.4);
 }
 .feature-icon{
-font-size:3rem;
+font-size:3.5rem;
 margin-bottom:1.5rem;
 filter:drop-shadow(0 0 20px var(–neon-cyan));
 }
@@ -388,12 +396,10 @@ font-size:0.9rem;
 color:rgba(255,255,255,0.9);
 }
 
-/* Interactive Calculator */
+/* Calculator */
 .calculator{
 padding:6rem 2rem;
 background:linear-gradient(135deg,rgba(0,243,255,0.05),rgba(180,0,255,0.05));
-position:relative;
-z-index:2;
 }
 .calculator-container{
 max-width:1000px;
@@ -434,7 +440,7 @@ box-shadow:0 0 20px var(–neon-cyan);
 }
 .calc-results{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:1.5rem;
 margin-top:3rem;
 }
@@ -446,26 +452,247 @@ padding:1.5rem;
 text-align:center;
 }
 .result-label{
-font-size:0.9rem;
+font-size:0.75rem;
 color:rgba(255,255,255,0.6);
 margin-bottom:0.5rem;
 text-transform:uppercase;
-letter-spacing:1px;
+letter-spacing:0.5px;
 }
 .result-value{
 font-family:‘Orbitron’,sans-serif;
-font-size:1.5rem;
+font-size:1.1rem;
 font-weight:900;
 background:linear-gradient(45deg,var(–neon-cyan),var(–neon-purple));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-/* Form Builder Section */
+/* Forum Section */
+.forum{
+padding:6rem 2rem;
+background:rgba(5,5,8,0.5);
+}
+.forum-container{
+max-width:1200px;
+margin:0 auto;
+}
+.forum-stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:1.5rem;
+margin-bottom:3rem;
+}
+.forum-stat-item{
+background:linear-gradient(135deg,rgba(0,243,255,0.1),rgba(180,0,255,0.1));
+border:1px solid rgba(0,243,255,0.3);
+border-radius:15px;
+padding:1.5rem;
+text-align:center;
+}
+.forum-stat-number{
+font-family:‘Orbitron’,sans-serif;
+font-size:2rem;
+font-weight:900;
+color:var(–neon-cyan);
+}
+.forum-stat-label{
+font-size:0.9rem;
+color:rgba(255,255,255,0.6);
+margin-top:0.5rem;
+}
+.add-question-form{
+background:linear-gradient(135deg,rgba(10,10,15,0.9),rgba(5,5,8,0.95));
+border:1px solid rgba(0,243,255,0.3);
+border-radius:20px;
+padding:2rem;
+margin-bottom:3rem;
+}
+.add-question-form h3{
+font-family:‘Orbitron’,sans-serif;
+color:var(–neon-cyan);
+margin-bottom:1.5rem;
+}
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:1rem;
+margin-bottom:1rem;
+}
+.form-group{
+margin-bottom:1rem;
+}
+.form-label{
+display:block;
+margin-bottom:0.5rem;
+color:rgba(255,255,255,0.8);
+font-weight:600;
+font-size:0.9rem;
+}
+.form-input,.form-select{
+width:100%;
+padding:0.9rem;
+background:rgba(0,243,255,0.05);
+border:1px solid rgba(0,243,255,0.3);
+border-radius:10px;
+color:#fff;
+font-size:1rem;
+font-family:‘Rajdhani’,sans-serif;
+}
+.form-input:focus,.form-select:focus{
+outline:none;
+border-color:var(–neon-cyan);
+box-shadow:0 0 15px rgba(0,243,255,0.3);
+}
+textarea.form-input{
+min-height:100px;
+resize:vertical;
+}
+.filter-tags{
+display:flex;
+gap:1rem;
+margin-bottom:2rem;
+flex-wrap:wrap;
+}
+.filter-tag{
+padding:0.6rem 1.5rem;
+background:rgba(0,243,255,0.1);
+border:1px solid rgba(0,243,255,0.3);
+border-radius:25px;
+color:rgba(255,255,255,0.8);
+font-weight:600;
+cursor:pointer;
+transition:all 0.3s;
+}
+.filter-tag:hover,.filter-tag.active{
+background:linear-gradient(45deg,var(–neon-cyan),var(–neon-purple));
+color:#000;
+border-color:transparent;
+}
+.questions-list{
+display:flex;
+flex-direction:column;
+gap:1.5rem;
+}
+.question-card{
+background:linear-gradient(135deg,rgba(10,10,15,0.8),rgba(5,5,8,0.9));
+border:1px solid rgba(0,243,255,0.2);
+border-radius:20px;
+padding:2rem;
+transition:all 0.3s;
+}
+.question-card:hover{
+border-color:var(–neon-cyan);
+box-shadow:0 10px 30px rgba(0,243,255,0.2);
+}
+.question-header{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+margin-bottom:1rem;
+flex-wrap:wrap;
+gap:1rem;
+}
+.question-meta{
+display:flex;
+gap:1rem;
+align-items:center;
+flex-wrap:wrap;
+}
+.author{
+font-weight:700;
+color:var(–neon-cyan);
+}
+.timestamp{
+color:rgba(255,255,255,0.5);
+font-size:0.85rem;
+}
+.category-badge{
+padding:0.4rem 1rem;
+background:rgba(0,243,255,0.1);
+border:1px solid rgba(0,243,255,0.3);
+border-radius:15px;
+font-size:0.85rem;
+color:var(–neon-cyan);
+}
+.question-title{
+font-size:1.3rem;
+font-weight:700;
+color:#fff;
+margin-bottom:0.75rem;
+}
+.question-text{
+color:rgba(255,255,255,0.8);
+line-height:1.7;
+margin-bottom:1.5rem;
+}
+.question-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-top:1rem;
+border-top:1px solid rgba(0,243,255,0.1);
+}
+.answer-count{
+color:rgba(255,255,255,0.6);
+font-size:0.9rem;
+}
+.answer-count.has-answers{
+color:var(–neon-cyan);
+font-weight:600;
+}
+.btn-answer{
+padding:0.6rem 1.5rem;
+background:transparent;
+border:1px solid var(–neon-cyan);
+border-radius:20px;
+color:var(–neon-cyan);
+font-weight:600;
+cursor:pointer;
+transition:all 0.3s;
+}
+.btn-answer:hover{
+background:rgba(0,243,255,0.1);
+}
+.answers-section{
+margin-top:1.5rem;
+padding-top:1.5rem;
+border-top:2px solid rgba(0,243,255,0.2);
+display:none;
+}
+.answers-section.active{
+display:block;
+}
+.answer-item{
+background:rgba(0,243,255,0.05);
+border-left:3px solid var(–neon-purple);
+padding:1rem 1.5rem;
+margin-bottom:1rem;
+border-radius:10px;
+}
+.answer-header{
+display:flex;
+justify-content:space-between;
+margin-bottom:0.75rem;
+}
+.answer-author{
+font-weight:700;
+color:var(–neon-purple);
+}
+.answer-time{
+color:rgba(255,255,255,0.4);
+font-size:0.85rem;
+}
+.answer-text{
+color:rgba(255,255,255,0.9);
+line-height:1.6;
+}
+.add-answer-form{
+margin-top:1.5rem;
+}
+
+/* Contact */
 .contact-section{
 padding:6rem 2rem;
-position:relative;
-z-index:2;
 }
 .contact-grid{
 max-width:1200px;
@@ -511,34 +738,6 @@ border-radius:30px;
 padding:3rem;
 box-shadow:0 20px 60px rgba(0,243,255,0.2);
 }
-.form-group{
-margin-bottom:1.5rem;
-}
-.form-label{
-display:block;
-margin-bottom:0.5rem;
-color:var(–neon-cyan);
-font-weight:600;
-text-transform:uppercase;
-letter-spacing:1px;
-font-size:0.9rem;
-}
-.form-input{
-width:100%;
-padding:1rem;
-background:rgba(0,243,255,0.05);
-border:1px solid rgba(0,243,255,0.3);
-border-radius:10px;
-color:#fff;
-font-size:1rem;
-transition:all 0.3s;
-}
-.form-input:focus{
-outline:none;
-border-color:var(–neon-cyan);
-box-shadow:0 0 20px rgba(0,243,255,0.3);
-background:rgba(0,243,255,0.1);
-}
 .form-submit{
 width:100%;
 padding:1.2rem;
@@ -559,7 +758,7 @@ transform:translateY(-2px);
 box-shadow:0 15px 50px rgba(0,243,255,0.6);
 }
 
-/* Popup Builder */
+/* Popup */
 .popup-overlay{
 display:none;
 position:fixed;
@@ -688,178 +887,33 @@ border-top:1px solid rgba(0,243,255,0.1);
 color:rgba(255,255,255,0.5);
 }
 
-/* Collaborative Notes */
-.notes-panel{
+/* Floating Forum Button */
+.forum-float{
 position:fixed;
-right:-400px;
-top:80px;
-width:380px;
-height:calc(100vh - 100px);
-background:rgba(10,10,15,0.98);
-backdrop-filter:blur(20px);
-border:1px solid rgba(0,243,255,0.3);
-border-radius:20px 0 0 20px;
-padding:2rem;
-z-index:999;
-transition:right 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
-overflow-y:auto;
-box-shadow:-10px 0 40px rgba(0,243,255,0.2);
-}
-.notes-panel.active{
-right:0;
-}
-.notes-toggle{
-position:fixed;
-right:20px;
-bottom:80px;
-width:60px;
-height:60px;
+bottom:30px;
+right:30px;
+padding:1rem 2rem;
 background:linear-gradient(45deg,var(–neon-cyan),var(–neon-purple));
-border:none;
-border-radius:50%;
+border-radius:50px;
 color:#000;
-font-size:1.5rem;
-cursor:pointer;
-z-index:998;
-box-shadow:0 5px 30px rgba(0,243,255,0.5);
+font-weight:700;
+text-decoration:none;
+font-size:1.1rem;
+z-index:999;
+box-shadow:0 10px 40px rgba(0,243,255,0.6);
 transition:all 0.3s;
-animation:bounce 2s infinite;
+animation:bounceFloat 2s infinite;
+display:flex;
+align-items:center;
+gap:0.5rem;
 }
-@keyframes bounce{
+@keyframes bounceFloat{
 0%,100%{transform:translateY(0)}
 50%{transform:translateY(-10px)}
 }
-.notes-toggle:hover{
-transform:scale(1.1);
-box-shadow:0 10px 40px rgba(0,243,255,0.7);
-}
-.notes-header{
-font-family:‘Orbitron’,sans-serif;
-font-size:1.5rem;
-color:var(–neon-cyan);
-margin-bottom:1.5rem;
-padding-bottom:1rem;
-border-bottom:1px solid rgba(0,243,255,0.2);
-}
-.note-item{
-background:rgba(0,243,255,0.05);
-border:1px solid rgba(0,243,255,0.2);
-border-radius:15px;
-padding:1rem;
-margin-bottom:1rem;
-position:relative;
-animation:slideInRight 0.4s ease-out;
-}
-@keyframes slideInRight{
-from{opacity:0;transform:translateX(20px)}
-to{opacity:1;transform:translateX(0)}
-}
-.note-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:0.5rem;
-}
-.note-author{
-font-weight:700;
-color:var(–neon-cyan);
-font-size:0.9rem;
-}
-.note-time{
-font-size:0.75rem;
-color:rgba(255,255,255,0.4);
-}
-.note-section{
-font-size:0.8rem;
-color:rgba(255,255,255,0.6);
-background:rgba(0,243,255,0.1);
-padding:0.25rem 0.75rem;
-border-radius:10px;
-margin-bottom:0.5rem;
-display:inline-block;
-}
-.note-text{
-color:rgba(255,255,255,0.9);
-line-height:1.6;
-font-size:0.9rem;
-}
-.note-delete{
-position:absolute;
-top:0.5rem;
-right:0.5rem;
-background:transparent;
-border:none;
-color:#ff0000;
-cursor:pointer;
-opacity:0;
-transition:opacity 0.3s;
-}
-.note-item:hover .note-delete{
-opacity:1;
-}
-.add-note-form{
-background:rgba(0,243,255,0.05);
-border:1px solid rgba(0,243,255,0.3);
-border-radius:15px;
-padding:1.5rem;
-margin-bottom:1.5rem;
-}
-.note-input{
-width:100%;
-padding:0.75rem;
-background:rgba(0,243,255,0.05);
-border:1px solid rgba(0,243,255,0.3);
-border-radius:10px;
-color:#fff;
-font-size:0.9rem;
-margin-bottom:0.75rem;
-resize:vertical;
-min-height:80px;
-}
-.note-input:focus{
-outline:none;
-border-color:var(–neon-cyan);
-box-shadow:0 0 15px rgba(0,243,255,0.3);
-}
-.note-section-select{
-width:100%;
-padding:0.75rem;
-background:rgba(0,243,255,0.05);
-border:1px solid rgba(0,243,255,0.3);
-border-radius:10px;
-color:#fff;
-font-size:0.9rem;
-margin-bottom:0.75rem;
-}
-.add-note-btn{
-width:100%;
-padding:0.75rem;
-background:linear-gradient(45deg,var(–neon-cyan),var(–neon-purple));
-border:none;
-border-radius:10px;
-color:#000;
-font-weight:700;
-cursor:pointer;
-transition:all 0.3s;
-}
-.add-note-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 5px 20px rgba(0,243,255,0.5);
-}
-.notes-count{
-position:absolute;
-top:-8px;
-right:-8px;
-background:#ff0000;
-color:#fff;
-border-radius:50%;
-width:24px;
-height:24px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:0.75rem;
-font-weight:700;
+.forum-float:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 50px rgba(0,243,255,0.8);
 }
 
 /* Responsive */
@@ -868,14 +922,14 @@ font-weight:700;
 .nav-links{display:none}
 .contact-grid{grid-template-columns:1fr}
 .features-grid{grid-template-columns:1fr}
-.notes-panel{
-width:100%;
-right:-100%;
-top:70px;
-border-radius:20px 20px 0 0;
-}
-.notes-panel.active{
-right:0;
+.form-row{grid-template-columns:1fr}
+.calc-results{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.result-value{font-size:1.2rem}
+.forum-float{
+bottom:20px;
+right:20px;
+padding:0.8rem 1.5rem;
+font-size:0.9rem;
 }
 }
 </style>
@@ -894,7 +948,6 @@ right:0;
 <ul class="nav-links">
 <li><a href="#tech">Teknologi</a></li>
 <li><a href="#calculator">Kalkulator</a></li>
-<li><a href="#aplikasi">Aplikasi</a></li>
 <li><a href="forum.html">Forum Q&A</a></li>
 <li><a href="#kontak">Kontak</a></li>
 </ul>
@@ -911,8 +964,8 @@ right:0;
 <h1>MASA DEPAN ENERGI<br>DIMULAI HARI INI</h1>
 <p class="subtitle">Sistem PLTS Premium dengan Baterai LiFePO4 untuk Keandalan 24/7</p>
 <div class="hero-cta">
-<button class="btn-primary" onclick="document.getElementById('kontak').scrollIntoView({behavior:'smooth'})">MULAI SEKARANG</button>
-<button class="btn-secondary" onclick="document.getElementById('tech').scrollIntoView({behavior:'smooth'})">JELAJAHI TEKNOLOGI</button>
+<a href="#kontak" class="btn-primary">MULAI SEKARANG</a>
+<a href="forum.html" class="btn-secondary">FORUM Q&A</a>
 </div>
 </div>
 </section>
@@ -1004,7 +1057,7 @@ right:0;
 </div>
 </section>
 
-<!-- Calculator (Dynamic Content) -->
+<!-- Calculator -->
 
 <section class="calculator" id="calculator">
 <div class="calculator-container">
@@ -1031,34 +1084,58 @@ right:0;
 
 <div class="calc-results">
 <div class="calc-result-item">
-<div class="result-label">Hemat / Bulan</div>
+<div class="result-label">Investasi</div>
+<div class="result-value" id="investAmount">Rp 50jt</div>
+</div>
+<div class="calc-result-item">
+<div class="result-label">Hemat/Bulan</div>
 <div class="result-value" id="monthSaving">Rp 1.2jt</div>
 </div>
 <div class="calc-result-item">
-<div class="result-label">Hemat / Tahun</div>
+<div class="result-label">Hemat/Tahun</div>
 <div class="result-value" id="yearSaving">Rp 14.4jt</div>
 </div>
 <div class="calc-result-item">
-<div class="result-label">Panel Needed</div>
+<div class="result-label">Panel</div>
 <div class="result-value" id="panelNeeded">8 unit</div>
 </div>
 <div class="calc-result-item">
-<div class="result-label">Battery Size</div>
+<div class="result-label">Battery</div>
 <div class="result-value" id="batterySize">10 kWh</div>
 </div>
 <div class="calc-result-item">
-<div class="result-label">ROI Period</div>
-<div class="result-value" id="roiPeriod">5 tahun</div>
+<div class="result-label">ROI</div>
+<div class="result-value" id="roiPeriod">5 thn</div>
 </div>
 <div class="calc-result-item">
-<div class="result-label">Total Saving 10y</div>
+<div class="result-label">Total 25y</div>
 <div class="result-value" id="totalSaving">Rp 144jt</div>
+</div>
+<div class="calc-result-item">
+<div class="result-label">Profit 25y</div>
+<div class="result-value" id="netProfit">Rp 94jt</div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- Contact Form Builder -->
+<!-- Forum CTA -->
+
+<section style="padding:4rem 2rem;text-align:center;background:linear-gradient(135deg,rgba(0,243,255,0.05),rgba(180,0,255,0.05));position:relative;z-index:2;">
+<div style="max-width:800px;margin:0 auto;">
+<h2 style="font-family:'Orbitron',sans-serif;font-size:2.5rem;margin-bottom:1rem;background:linear-gradient(45deg,var(--neon-cyan),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+💬 Ada Pertanyaan?
+</h2>
+<p style="font-size:1.2rem;color:rgba(255,255,255,0.7);margin-bottom:2rem;line-height:1.8;">
+Bergabunglah dengan komunitas pengguna PLTS. Tanya jawab dengan sesama pengguna dan dapatkan tips dari ahli.
+</p>
+<a href="forum.html" class="btn-primary" style="display:inline-block;">
+Kunjungi Forum Q&A
+</a>
+</div>
+</section>
+
+<!-- Contact -->
 
 <section class="contact-section" id="kontak">
 <div class="contact-grid">
@@ -1095,7 +1172,7 @@ right:0;
 </div>
 <div class="form-group">
 <label class="form-label">Aplikasi Kritis</label>
-<select class="form-input" id="aplikasi">
+<select class="form-input form-select" id="aplikasi">
 <option>Kolam Koi / Pond</option>
 <option>AC / Pendingin 24 Jam</option>
 <option>CCTV / Security System</option>
@@ -1110,7 +1187,7 @@ right:0;
 </div>
 </section>
 
-<!-- Popup Builder -->
+<!-- Popup -->
 
 <div class="popup-overlay" id="popup">
 <div class="popup-content">
@@ -1122,9 +1199,15 @@ right:0;
 <div class="code">QUANTUM2024</div>
 <p style="color:rgba(255,255,255,0.6);margin-top:1rem;font-size:0.9rem;">Diskon hingga 15% + Gratis Monitoring System</p>
 </div>
-<button class="btn-primary" onclick="closePopup();document.getElementById('kontak').scrollIntoView({behavior:'smooth'})">KLAIM PROMO SEKARANG</button>
+<button class="btn-primary" style="width:100%" onclick="closePopup();document.getElementById('kontak').scrollIntoView({behavior:'smooth'})">KLAIM PROMO SEKARANG</button>
 </div>
 </div>
+
+<!-- Floating Forum Button -->
+
+<a href="forum.html" class="forum-float">
+💬 Forum Q&A
+</a>
 
 <!-- Footer -->
 
@@ -1146,6 +1229,7 @@ right:0;
 <div class="footer-section">
 <h3>LAYANAN</h3>
 <ul>
+<li><a href="forum.html">Forum Q&A</a></li>
 <li><a href="#">Konsultasi & Survey</a></li>
 <li><a href="#">Instalasi Profesional</a></li>
 <li><a href="#">Maintenance Package</a></li>
@@ -1157,7 +1241,7 @@ right:0;
 <ul>
 <li>📍 Jakarta, Indonesia</li>
 <li>📞 0811-211-630</li>
-<li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d04030b022d1e02010c1f041e1c180c03191800430409">[email&#160;protected]</a></li>
+<li>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4a23242c250a3925262b3823393b3f2b243e3f2764232e">[email&#160;protected]</a></li>
 <li>⏰ 24/7 Customer Support</li>
 </ul>
 </div>
@@ -1197,21 +1281,38 @@ return ’Rp ’+n.toLocaleString(‘id-ID’);
 function updateCalc(){
 const bill=parseInt(billSlider.value);
 const savingPct=parseInt(savingSlider.value);
-const monthly=Math.round(bill*savingPct/100);
-const yearly=monthly*12;
-const total10y=yearly*10;
-const panels=Math.ceil((bill/1500000)*8*(savingPct/80));
-const battery=Math.ceil((bill/1500000)*10*(savingPct/80));
-const roi=Math.round(100/(savingPct*0.8));
+
+// Rumus berdasarkan benchmark Indonesia
+// Tagihan 1.2jt = hemat 1jt (83%) dengan investasi 50jt
+// Base ratio: 50jt / 1.2jt = 41.67x
+const baseInvestmentRatio = 41.67;
+const estimatedInvestment = Math.round((bill * baseInvestmentRatio) / 1000000) * 1000000; // Pembulatan ke juta
+
+// Penghematan aktual
+const monthlySaving = Math.round(bill * (savingPct / 100));
+const yearlySaving = monthlySaving * 12;
+const total25y = yearlySaving * 25; // Umur panel 25 tahun
+const netProfit = total25y - estimatedInvestment; // Profit bersih
+
+// ROI calculation
+const roiYears = estimatedInvestment / yearlySaving;
+
+// Panel & Battery estimation (based on power consumption)
+// Asumsi: 1.2jt tagihan = ~6kW system = 12 panel x 550W
+const powerNeeded = (bill / 1200000) * 6; // kW
+const panels = Math.ceil(powerNeeded / 0.55); // Panel 550W
+const battery = Math.ceil(powerNeeded * 1.5); // Battery 1.5x power untuk backup
 
 billDisplay.textContent=formatRp(bill);
 savingDisplay.textContent=savingPct+’%’;
-document.getElementById(‘monthSaving’).textContent=formatRp(monthly);
-document.getElementById(‘yearSaving’).textContent=formatRp(yearly);
-document.getElementById(‘totalSaving’).textContent=formatRp(total10y);
+document.getElementById(‘investAmount’).textContent=formatRp(estimatedInvestment);
+document.getElementById(‘monthSaving’).textContent=formatRp(monthlySaving);
+document.getElementById(‘yearSaving’).textContent=formatRp(yearlySaving);
+document.getElementById(‘totalSaving’).textContent=formatRp(total25y);
+document.getElementById(‘netProfit’).textContent=formatRp(netProfit);
 document.getElementById(‘panelNeeded’).textContent=panels+’ unit’;
 document.getElementById(‘batterySize’).textContent=battery+’ kWh’;
-document.getElementById(‘roiPeriod’).textContent=roi+’ tahun’;
+document.getElementById(‘roiPeriod’).textContent=roiYears.toFixed(1)+’ thn’;
 }
 
 billSlider.addEventListener(‘input’,updateCalc);
@@ -1226,7 +1327,7 @@ function closePopup(){
 document.getElementById(‘popup’).classList.remove(‘active’);
 }
 
-// Form
+// Contact Form
 document.getElementById(‘contactForm’).addEventListener(‘submit’,function(e){
 e.preventDefault();
 const nama=document.getElementById(‘nama’).value;
@@ -1250,7 +1351,10 @@ window.open(`https://wa.me/6281121163?text=${encodeURIComponent(msg)}`,’_blank
 document.querySelectorAll(‘a[href^=”#”]’).forEach(a=>{
 a.addEventListener(‘click’,function(e){
 e.preventDefault();
-document.querySelector(this.getAttribute(‘href’)).scrollIntoView({behavior:‘smooth’});
+const target=document.querySelector(this.getAttribute(‘href’));
+if(target){
+target.scrollIntoView({behavior:‘smooth’});
+}
 });
 });
 </script>
