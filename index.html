@@ -1,842 +1,559 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOLARIS PLTS - Panel Surya Premium LiFePO4</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
---cyan:#00d9ff;
---dark:#0a1628;
---darker:#050b16;
-}
-body{
-font-family:'Inter',system-ui,-apple-system,sans-serif;
-background:var(--darker);
-color:#fff;
-line-height:1.6;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071521">
+  <meta name="description" content="SOLARIS merancang PLTS hybrid dengan baterai LiFePO4 untuk rumah dan usaha. Konsultasi, simulasi kebutuhan, instalasi, dan monitoring.">
+  <title>SOLARIS PLTS | Energi Surya yang Andal untuk Rumah & Usaha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #071521;
+      --ink-soft: #102635;
+      --surface: #f5f7f2;
+      --card: #ffffff;
+      --muted: #5f6f75;
+      --line: #dce4df;
+      --green: #9ce15a;
+      --green-dark: #5eaa23;
+      --cyan: #42d6d0;
+      --sun: #ffcc5c;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(7, 21, 33, .12);
+      --radius: 24px;
+    }
 
-/* Nav */
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(10,22,40,0.95);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(0,217,255,0.2);
-z-index:1000;
-}
-.nav-content{
-max-width:1200px;
-margin:0 auto;
-padding:1rem 2rem;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-.logo{
-font-size:1.5rem;
-font-weight:900;
-color:var(–cyan);
-}
-.nav-links{
-display:flex;
-gap:2rem;
-list-style:none;
-}
-.nav-links a{
-color:#fff;
-text-decoration:none;
-font-weight:600;
-font-size:0.9rem;
-transition:color 0.3s;
-}
-.nav-links a:hover{
-color:var(–cyan);
-}
-.btn-nav{
-padding:0.6rem 1.5rem;
-background:var(–cyan);
-color:var(–darker);
-border:none;
-border-radius:6px;
-font-weight:700;
-font-size:0.9rem;
-cursor:pointer;
-}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      background: var(--surface);
+      color: var(--ink);
+      font-family: "DM Sans", system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow {
+      color: var(--green-dark);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      margin-top: .7rem;
+    }
+    .section-copy { color: var(--muted); font-size: 1.05rem; max-width: 660px; margin-top: 1rem; }
+    .btn {
+      align-items: center;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      font-weight: 700;
+      gap: .55rem;
+      justify-content: center;
+      min-height: 50px;
+      padding: .8rem 1.35rem;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--green); color: var(--ink); }
+    .btn-primary:hover { background: #b0ef72; }
+    .btn-secondary { border-color: rgba(255,255,255,.28); color: var(--white); }
+    .btn-secondary:hover { background: rgba(255,255,255,.08); }
 
-/* Hero */
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-padding:6rem 2rem 4rem;
-background:linear-gradient(135deg,var(–darker) 0%,var(–dark) 100%);
-}
-.hero-content{
-max-width:1200px;
-margin:0 auto;
-text-align:center;
-}
-.badge{
-display:inline-block;
-padding:0.5rem 1rem;
-background:rgba(0,217,255,0.1);
-border:1px solid var(–cyan);
-border-radius:20px;
-color:var(–cyan);
-font-size:0.85rem;
-font-weight:600;
-margin-bottom:2rem;
-}
-.hero h1{
-font-size:3.5rem;
-font-weight:900;
-color:#fff;
-margin-bottom:1.5rem;
-line-height:1.1;
-}
-.hero h1 span{
-color:var(–cyan);
-}
-.subtitle{
-font-size:1.25rem;
-color:rgba(255,255,255,0.8);
-margin-bottom:2.5rem;
-}
-.hero-buttons{
-display:flex;
-gap:1rem;
-justify-content:center;
-flex-wrap:wrap;
-}
-.btn-primary{
-padding:1rem 2rem;
-background:var(–cyan);
-color:var(–darker);
-border:none;
-border-radius:8px;
-font-weight:700;
-font-size:1rem;
-cursor:pointer;
-text-decoration:none;
-display:inline-block;
-}
-.btn-secondary{
-padding:1rem 2rem;
-background:transparent;
-color:#fff;
-border:2px solid var(–cyan);
-border-radius:8px;
-font-weight:700;
-font-size:1rem;
-text-decoration:none;
-display:inline-block;
-}
-.btn-secondary:hover{
-background:rgba(0,217,255,0.1);
-}
+    /* Navigation */
+    .site-nav {
+      background: rgba(7, 21, 33, .88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: var(--white);
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+    }
+    .nav-inner { align-items: center; display: flex; height: 76px; justify-content: space-between; }
+    .brand { align-items: center; display: flex; gap: .7rem; text-decoration: none; }
+    .brand-mark {
+      align-items: center;
+      background: var(--green);
+      border-radius: 50%;
+      color: var(--ink);
+      display: grid;
+      font-size: 1.1rem;
+      height: 38px;
+      place-items: center;
+      width: 38px;
+    }
+    .brand-name { font-family: Manrope, sans-serif; font-size: 1.15rem; font-weight: 800; letter-spacing: .08em; }
+    .nav-links { align-items: center; display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.78); font-size: .92rem; font-weight: 600; text-decoration: none; }
+    .nav-links a:hover { color: var(--green); }
+    .menu-button { background: none; border: 0; color: white; cursor: pointer; display: none; font-size: 1.5rem; padding: .4rem; }
 
-/* Stats */
-.stats{
-padding:4rem 2rem;
-background:var(–dark);
-}
-.stats-grid{
-max-width:1200px;
-margin:0 auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:2rem;
-}
-.stat-card{
-background:rgba(0,217,255,0.05);
-border:1px solid rgba(0,217,255,0.2);
-border-radius:12px;
-padding:2rem;
-text-align:center;
-}
-.stat-card:hover{
-transform:translateY(-5px);
-border-color:var(–cyan);
-}
-.stat-number{
-font-size:3rem;
-font-weight:900;
-color:var(–cyan);
-margin-bottom:0.5rem;
-}
-.stat-label{
-color:rgba(255,255,255,0.7);
-}
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(circle at 80% 10%, rgba(66,214,208,.18), transparent 32%),
+        radial-gradient(circle at 5% 60%, rgba(156,225,90,.12), transparent 28%),
+        var(--ink);
+      color: var(--white);
+      min-height: 760px;
+      overflow: hidden;
+      padding: 150px 0 88px;
+      position: relative;
+    }
+    .hero::after {
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 52px 52px;
+      content: "";
+      inset: 0;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      pointer-events: none;
+      position: absolute;
+    }
+    .hero-grid { align-items: center; display: grid; gap: 6vw; grid-template-columns: 1.1fr .9fr; position: relative; z-index: 1; }
+    .hero-badge {
+      align-items: center;
+      background: rgba(156,225,90,.1);
+      border: 1px solid rgba(156,225,90,.3);
+      border-radius: 999px;
+      color: #cbf6a4;
+      display: inline-flex;
+      font-size: .82rem;
+      font-weight: 700;
+      gap: .55rem;
+      padding: .45rem .8rem;
+    }
+    .pulse { background: var(--green); border-radius: 50%; box-shadow: 0 0 0 6px rgba(156,225,90,.12); height: 8px; width: 8px; }
+    .hero h1 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.45rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+      margin: 1.5rem 0;
+      max-width: 760px;
+    }
+    .hero h1 em { color: var(--green); font-style: normal; }
+    .hero-copy { color: rgba(255,255,255,.7); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 610px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .hero-note { color: rgba(255,255,255,.5); font-size: .8rem; margin-top: 1rem; }
+    .energy-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 32px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      padding: 1.3rem;
+      transform: rotate(1.5deg);
+    }
+    .energy-screen { background: #ecf2ed; border-radius: 22px; color: var(--ink); overflow: hidden; padding: 1.5rem; }
+    .screen-head { align-items: center; display: flex; justify-content: space-between; }
+    .screen-head span:first-child { font-size: .85rem; font-weight: 700; }
+    .status { background: #d7f5bd; border-radius: 999px; color: #376d13; font-size: .7rem; font-weight: 700; padding: .3rem .55rem; }
+    .power-total { font-family: Manrope, sans-serif; font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 800; letter-spacing: -.06em; margin: 1.2rem 0 .1rem; }
+    .power-total small { font-size: 1rem; letter-spacing: 0; }
+    .flow { align-items: stretch; display: grid; gap: .6rem; grid-template-columns: repeat(3, 1fr); margin-top: 1.4rem; }
+    .flow-item { background: white; border-radius: 15px; min-width: 0; padding: .9rem .7rem; }
+    .flow-icon { font-size: 1.25rem; }
+    .flow-label { color: var(--muted); font-size: .66rem; margin-top: .45rem; }
+    .flow-value { font-size: .82rem; font-weight: 800; }
+    .battery-row { align-items: center; background: var(--ink); border-radius: 16px; color: white; display: flex; gap: 1rem; justify-content: space-between; margin-top: .65rem; padding: 1rem; }
+    .battery-row strong { color: var(--green); }
+    .battery-bar { background: rgba(255,255,255,.18); border-radius: 99px; flex: 1; height: 8px; overflow: hidden; }
+    .battery-fill { background: var(--green); border-radius: inherit; height: 100%; width: 78%; }
 
-/* Section */
-section{
-padding:5rem 2rem;
-}
-.section-header{
-text-align:center;
-margin-bottom:3rem;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-}
-.section-title{
-font-size:2.5rem;
-font-weight:900;
-color:#fff;
-margin-bottom:1rem;
-}
-.section-title span{
-color:var(–cyan);
-}
-.section-subtitle{
-font-size:1.1rem;
-color:rgba(255,255,255,0.7);
-}
+    /* Trust strip */
+    .trust { background: var(--white); border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-item { border-right: 1px solid var(--line); padding: 2rem 1.3rem; }
+    .trust-item:last-child { border: 0; }
+    .trust-item strong { display: block; font-family: Manrope, sans-serif; font-size: 1.55rem; letter-spacing: -.04em; }
+    .trust-item span { color: var(--muted); font-size: .82rem; }
 
-/* Features */
-.features{
-background:var(–darker);
-}
-.features-grid{
-max-width:1200px;
-margin:0 auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:2rem;
-}
-.feature-card{
-background:rgba(0,217,255,0.03);
-border:1px solid rgba(0,217,255,0.1);
-border-radius:12px;
-padding:2rem;
-}
-.feature-card:hover{
-border-color:var(–cyan);
-}
-.feature-icon{
-font-size:2.5rem;
-margin-bottom:1rem;
-}
-.feature-card h3{
-font-size:1.25rem;
-color:var(–cyan);
-margin-bottom:1rem;
-font-weight:700;
-}
-.feature-card p{
-color:rgba(255,255,255,0.8);
-margin-bottom:1rem;
-}
-.feature-spec{
-background:rgba(0,217,255,0.05);
-border-left:3px solid var(–cyan);
-padding:0.75rem;
-font-size:0.85rem;
-}
+    /* Solution */
+    .solutions { padding: 110px 0; }
+    .section-head { align-items: end; display: flex; justify-content: space-between; margin-bottom: 2.6rem; }
+    .section-head .section-copy { margin-left: 2rem; }
+    .solution-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+    .solution-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+      padding: 2rem;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .solution-card:hover { box-shadow: var(--shadow); transform: translateY(-6px); }
+    .solution-card.featured { background: var(--ink); color: white; }
+    .card-icon { align-items: center; background: #e6f6d8; border-radius: 16px; display: grid; font-size: 1.4rem; height: 52px; place-items: center; width: 52px; }
+    .featured .card-icon { background: rgba(156,225,90,.15); }
+    .solution-card h3 { font-family: Manrope, sans-serif; font-size: 1.45rem; letter-spacing: -.03em; margin: 1.4rem 0 .7rem; }
+    .solution-card p { color: var(--muted); }
+    .featured p { color: rgba(255,255,255,.65); }
+    .spec-list { border-top: 1px solid var(--line); display: grid; gap: .55rem; list-style: none; margin-top: auto; padding-top: 1.2rem; }
+    .featured .spec-list { border-color: rgba(255,255,255,.12); }
+    .spec-list li { font-size: .84rem; font-weight: 600; }
+    .spec-list li::before { color: var(--green-dark); content: "✓"; margin-right: .55rem; }
+    .featured .spec-list li::before { color: var(--green); }
 
-/* Calculator */
-.calculator{
-background:var(–dark);
-}
-.calc-container{
-max-width:900px;
-margin:0 auto;
-background:rgba(0,217,255,0.03);
-border:1px solid rgba(0,217,255,0.2);
-border-radius:16px;
-padding:2.5rem;
-}
-.calc-input{
-margin:2rem 0;
-}
-.calc-label{
-display:flex;
-justify-content:space-between;
-margin-bottom:1rem;
-font-weight:600;
-color:var(–cyan);
-}
-.slider{
-width:100%;
-height:6px;
-background:rgba(0,217,255,0.2);
-border-radius:3px;
-outline:none;
--webkit-appearance:none;
-}
-.slider::-webkit-slider-thumb{
--webkit-appearance:none;
-width:20px;
-height:20px;
-background:var(–cyan);
-border-radius:50%;
-cursor:pointer;
-}
-.calc-results{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:1rem;
-margin-top:2rem;
-}
-.calc-result-item{
-background:rgba(0,217,255,0.05);
-border:1px solid rgba(0,217,255,0.2);
-border-radius:10px;
-padding:1.25rem;
-text-align:center;
-}
-.result-label{
-font-size:0.75rem;
-color:rgba(255,255,255,0.6);
-margin-bottom:0.5rem;
-text-transform:uppercase;
-}
-.result-value{
-font-size:1.1rem;
-font-weight:900;
-color:var(–cyan);
-}
+    /* Process */
+    .process { background: #eaf0eb; padding: 100px 0; }
+    .process-grid { display: grid; gap: 1rem; grid-template-columns: repeat(4, 1fr); margin-top: 3rem; }
+    .step { border-top: 2px solid #cfd9d1; padding-top: 1.4rem; position: relative; }
+    .step::before { background: var(--green-dark); border-radius: 50%; content: ""; height: 10px; left: 0; position: absolute; top: -6px; width: 10px; }
+    .step-number { color: var(--green-dark); font-size: .75rem; font-weight: 800; letter-spacing: .12em; }
+    .step h3 { font-family: Manrope, sans-serif; font-size: 1.08rem; margin: .5rem 0; }
+    .step p { color: var(--muted); font-size: .88rem; }
 
-/* Contact */
-.contact{
-background:var(–darker);
-}
-.contact-grid{
-max-width:1100px;
-margin:0 auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:3rem;
-}
-.contact-info h2{
-font-size:2rem;
-margin-bottom:1.5rem;
-color:#fff;
-}
-.contact-info p{
-font-size:1.1rem;
-color:rgba(255,255,255,0.8);
-margin-bottom:1.5rem;
-}
-.feature-list{
-list-style:none;
-}
-.feature-list li{
-padding:0.75rem 0;
-border-bottom:1px solid rgba(0,217,255,0.1);
-color:rgba(255,255,255,0.9);
-}
-.feature-list li::before{
-content:’✓ ’;
-color:var(–cyan);
-font-weight:900;
-}
-.contact-form{
-background:rgba(0,217,255,0.03);
-border:1px solid rgba(0,217,255,0.2);
-border-radius:16px;
-padding:2.5rem;
-}
-.form-group{
-margin-bottom:1.25rem;
-}
-.form-label{
-display:block;
-margin-bottom:0.5rem;
-color:var(–cyan);
-font-weight:600;
-font-size:0.9rem;
-}
-.form-input,.form-select{
-width:100%;
-padding:0.85rem;
-background:rgba(0,217,255,0.05);
-border:1px solid rgba(0,217,255,0.2);
-border-radius:8px;
-color:#fff;
-font-size:1rem;
-font-family:‘Inter’,sans-serif;
-}
-.form-input:focus,.form-select:focus{
-outline:none;
-border-color:var(–cyan);
-}
-.form-submit{
-width:100%;
-padding:1rem;
-background:var(–cyan);
-color:var(–darker);
-border:none;
-border-radius:8px;
-font-weight:700;
-font-size:1rem;
-cursor:pointer;
-}
+    /* Calculator */
+    .calculator { background: var(--ink); color: white; padding: 110px 0; }
+    .calc-grid { align-items: start; display: grid; gap: 5vw; grid-template-columns: .8fr 1.2fr; }
+    .calculator .section-copy { color: rgba(255,255,255,.6); }
+    .calc-disclaimer { border-left: 2px solid var(--sun); color: rgba(255,255,255,.55); font-size: .78rem; margin-top: 1.5rem; padding-left: .9rem; }
+    .calc-panel { background: white; border-radius: 28px; color: var(--ink); padding: 2rem; }
+    .range-group + .range-group { margin-top: 1.8rem; }
+    .range-head { align-items: center; display: flex; font-size: .9rem; font-weight: 700; justify-content: space-between; margin-bottom: .8rem; }
+    .range-value { background: #edf5e8; border-radius: 999px; color: #376d13; padding: .35rem .7rem; }
+    input[type="range"] { accent-color: var(--green-dark); cursor: pointer; width: 100%; }
+    .calc-results { display: grid; gap: .75rem; grid-template-columns: repeat(3, 1fr); margin-top: 2rem; }
+    .result { background: #f3f5f2; border-radius: 15px; padding: 1rem; }
+    .result span { color: var(--muted); display: block; font-size: .7rem; text-transform: uppercase; }
+    .result strong { display: block; font-family: Manrope, sans-serif; font-size: 1.05rem; margin-top: .2rem; }
+    .result.primary { background: var(--green); grid-column: span 2; }
+    .result.primary span { color: rgba(7,21,33,.65); }
+    .result.primary strong { font-size: 1.35rem; }
 
-/* Floating */
-.forum-float{
-position:fixed;
-bottom:30px;
-right:30px;
-padding:1rem 1.5rem;
-background:var(–cyan);
-border-radius:30px;
-color:var(–darker);
-font-weight:700;
-text-decoration:none;
-box-shadow:0 4px 20px rgba(0,217,255,0.4);
-z-index:999;
-}
+    /* CTA and form */
+    .contact { padding: 110px 0; }
+    .contact-shell { background: var(--white); border: 1px solid var(--line); border-radius: 32px; display: grid; grid-template-columns: .9fr 1.1fr; overflow: hidden; }
+    .contact-copy { background: var(--green); padding: clamp(2rem, 5vw, 4rem); }
+    .contact-copy h2 { font-family: Manrope, sans-serif; font-size: clamp(2rem, 4vw, 3.3rem); letter-spacing: -.05em; line-height: 1.08; margin: .7rem 0 1rem; }
+    .contact-points { display: grid; gap: .8rem; list-style: none; margin-top: 2rem; }
+    .contact-points li { font-size: .9rem; font-weight: 600; }
+    .contact-points li::before { content: "●"; font-size: .65rem; margin-right: .7rem; }
+    .contact-form { padding: clamp(2rem, 5vw, 4rem); }
+    .form-row { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: .78rem; font-weight: 700; margin-bottom: .4rem; }
+    .field input, .field select {
+      background: #f4f7f3;
+      border: 1px solid #d9e2db;
+      border-radius: 12px;
+      color: var(--ink);
+      min-height: 50px;
+      padding: .75rem .9rem;
+      width: 100%;
+    }
+    .field input:focus, .field select:focus { border-color: var(--green-dark); outline: 3px solid rgba(94,170,35,.13); }
+    .contact-form .btn { width: 100%; }
+    .privacy-note { color: var(--muted); font-size: .72rem; margin-top: .75rem; text-align: center; }
 
-/* Popup */
-.popup-overlay{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-z-index:9999;
-justify-content:center;
-align-items:center;
-}
-.popup-overlay.active{
-display:flex;
-}
-.popup-content{
-background:var(–dark);
-border:2px solid var(–cyan);
-border-radius:16px;
-padding:2.5rem;
-max-width:500px;
-width:90%;
-position:relative;
-}
-.popup-close{
-position:absolute;
-top:1rem;
-right:1rem;
-width:35px;
-height:35px;
-background:rgba(255,0,0,0.2);
-border:1px solid #ff0000;
-border-radius:50%;
-color:#ff0000;
-font-size:1.5rem;
-cursor:pointer;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-.popup-content h2{
-font-size:2rem;
-margin-bottom:1rem;
-color:var(–cyan);
-}
-.discount-code{
-background:rgba(0,217,255,0.1);
-border:2px solid var(–cyan);
-border-radius:12px;
-padding:1.5rem;
-margin:1.5rem 0;
-text-align:center;
-}
-.code{
-font-size:1.8rem;
-font-weight:900;
-color:var(–cyan);
-letter-spacing:3px;
-}
+    footer { background: var(--ink); color: white; padding: 3.5rem 0 2rem; }
+    .footer-grid { display: grid; gap: 2rem; grid-template-columns: 1.4fr repeat(2, .8fr); }
+    .footer-intro { color: rgba(255,255,255,.58); font-size: .9rem; margin-top: 1rem; max-width: 400px; }
+    .footer-col h3 { font-size: .78rem; letter-spacing: .1em; margin-bottom: .9rem; text-transform: uppercase; }
+    .footer-col ul { display: grid; gap: .55rem; list-style: none; }
+    .footer-col a, .footer-col li { color: rgba(255,255,255,.6); font-size: .86rem; text-decoration: none; }
+    .footer-col a:hover { color: var(--green); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.4); font-size: .78rem; margin-top: 3rem; padding-top: 1.5rem; }
+    .wa-float {
+      align-items: center;
+      background: #25d366;
+      border-radius: 999px;
+      bottom: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      color: #082414;
+      display: flex;
+      font-size: .85rem;
+      font-weight: 800;
+      gap: .45rem;
+      padding: .8rem 1rem;
+      position: fixed;
+      right: 22px;
+      text-decoration: none;
+      z-index: 90;
+    }
 
-/* Footer */
-footer{
-background:var(–darker);
-border-top:1px solid rgba(0,217,255,0.2);
-padding:3rem 2rem 1.5rem;
-}
-.footer-content{
-max-width:1200px;
-margin:0 auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:2rem;
-margin-bottom:2rem;
-}
-.footer-section h3{
-color:var(–cyan);
-margin-bottom:1rem;
-}
-.footer-section ul{
-list-style:none;
-}
-.footer-section a{
-color:rgba(255,255,255,0.7);
-text-decoration:none;
-}
-.footer-section a:hover{
-color:var(–cyan);
-}
-.footer-bottom{
-text-align:center;
-padding-top:2rem;
-border-top:1px solid rgba(0,217,255,0.1);
-color:rgba(255,255,255,0.5);
-font-size:0.9rem;
-}
-
-/* Responsive */
-@media(max-width:768px){
-.hero h1{font-size:2.5rem}
-.nav-links{display:none}
-.contact-grid{grid-template-columns:1fr}
-.features-grid{grid-template-columns:1fr}
-.calc-results{grid-template-columns:repeat(2,1fr)}
-.forum-float{bottom:20px;right:20px;padding:0.8rem 1.2rem;font-size:0.9rem}
-}
-</style>
-
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-top: 130px; }
+      .hero-grid, .calc-grid, .contact-shell { grid-template-columns: 1fr; }
+      .energy-card { margin: 1rem auto 0; max-width: 560px; transform: none; width: 100%; }
+      .section-head { align-items: start; flex-direction: column; }
+      .section-head .section-copy { margin-left: 0; }
+      .solution-grid { grid-template-columns: 1fr 1fr; }
+      .solution-card:last-child { grid-column: span 2; }
+      .process-grid { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .menu-button { display: block; }
+      .nav-links {
+        align-items: stretch;
+        background: var(--ink);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        inset: 76px 0 auto;
+        padding: 1rem 20px 1.5rem;
+        position: fixed;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { border-bottom: 1px solid rgba(255,255,255,.08); display: block; padding: .9rem 0; }
+      .nav-links .btn { margin-top: .8rem; }
+      .hero { padding-bottom: 64px; }
+      .hero-actions .btn { width: 100%; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .solution-grid, .process-grid, .footer-grid { grid-template-columns: 1fr; }
+      .solution-card:last-child { grid-column: auto; }
+      .solutions, .process, .calculator, .contact { padding: 78px 0; }
+      .calc-results { grid-template-columns: 1fr 1fr; }
+      .result.primary { grid-column: span 2; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .wa-float span { display: none; }
+      .wa-float { border-radius: 50%; font-size: 1.2rem; height: 52px; justify-content: center; padding: 0; width: 52px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="SOLARIS beranda">
+        <span class="brand-mark" aria-hidden="true">☀</span>
+        <span class="brand-name">SOLARIS</span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#solusi">Solusi</a></li>
+        <li><a href="#cara-kerja">Cara Kerja</a></li>
+        <li><a href="#kalkulator">Kalkulator</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a class="btn btn-primary" href="#kontak">Konsultasi Gratis</a></li>
+      </ul>
+    </div>
+  </header>
 
-<nav>
-<div class="nav-content">
-<div class="logo">SOLARIS</div>
-<ul class="nav-links">
-<li><a href="#tech">Teknologi</a></li>
-<li><a href="#calculator">Kalkulator</a></li>
-<li><a href="forum.html">Forum</a></li>
-<li><a href="#kontak">Kontak</a></li>
-</ul>
-<button class="btn-nav" onclick="showPopup()">Promo</button>
-</div>
-</nav>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge"><span class="pulse"></span> PLTS hybrid + baterai LiFePO4</div>
+          <h1>Energi surya yang bekerja <em>siang & malam.</em></h1>
+          <p class="hero-copy">Sistem PLTS yang dirancang sesuai pola pemakaian Anda—untuk mengurangi ketergantungan pada PLN, menjaga beban penting tetap menyala, dan memberi kendali penuh atas energi.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontak">Hitung kebutuhan saya <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#kalkulator">Coba kalkulator</a>
+          </div>
+          <p class="hero-note">Konsultasi awal tanpa biaya • Respons melalui WhatsApp</p>
+        </div>
+        <div class="energy-card" aria-label="Ilustrasi aliran energi PLTS">
+          <div class="energy-screen">
+            <div class="screen-head"><span>Energi hari ini</span><span class="status">● Sistem normal</span></div>
+            <div class="power-total">18,4 <small>kWh</small></div>
+            <div class="flow">
+              <div class="flow-item"><div class="flow-icon">☀️</div><div class="flow-label">Dari panel</div><div class="flow-value">4,8 kW</div></div>
+              <div class="flow-item"><div class="flow-icon">🏠</div><div class="flow-label">Ke beban</div><div class="flow-value">2,7 kW</div></div>
+              <div class="flow-item"><div class="flow-icon">⚡</div><div class="flow-label">Dari PLN</div><div class="flow-value">0,0 kW</div></div>
+            </div>
+            <div class="battery-row"><span>🔋 <strong>78%</strong></span><div class="battery-bar"><div class="battery-fill"></div></div><span>+2,1 kW</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-<div class="hero-content">
-<div class="badge">🚀 Baterai LiFePO4 Premium</div>
-<h1>Hemat Listrik Hingga <span>80%</span><br>dengan PLTS Premium</h1>
-<p class="subtitle">Sistem panel surya dengan baterai LiFePO4 untuk keandalan 24/7</p>
-<div class="hero-buttons">
-<a href="#kontak" class="btn-primary">Konsultasi Gratis</a>
-<a href="forum.html" class="btn-secondary">Forum Q&A</a>
-</div>
-</div>
-</section>
+    <section class="trust" aria-label="Keunggulan utama">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>24/7</strong><span>Monitoring sistem</span></div>
+        <div class="trust-item"><strong>10+ th</strong><span>Potensi umur baterai*</span></div>
+        <div class="trust-item"><strong>25–30 th</strong><span>Potensi umur panel*</span></div>
+        <div class="trust-item"><strong>Modular</strong><span>Mudah dikembangkan</span></div>
+      </div>
+    </section>
 
-<section class="stats">
-<div class="stats-grid">
-<div class="stat-card">
-<div class="stat-number">30%</div>
-<div class="stat-label">Panel Lebih Efisien</div>
-</div>
-<div class="stat-card">
-<div class="stat-number">10+</div>
-<div class="stat-label">Tahun Umur Baterai</div>
-</div>
-<div class="stat-card">
-<div class="stat-number">24/7</div>
-<div class="stat-label">Keandalan Listrik</div>
-</div>
-<div class="stat-card">
-<div class="stat-number">80%</div>
-<div class="stat-label">Penghematan Tagihan</div>
-</div>
-</div>
-</section>
+    <section class="solutions" id="solusi">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="eyebrow">Solusi terintegrasi</p><h2 class="section-title">Bukan sekadar panel<br>di atas atap.</h2></div>
+          <p class="section-copy">Setiap sistem disusun dari kebutuhan beban, profil pemakaian siang–malam, kondisi atap, dan target backup—bukan paket generik.</p>
+        </div>
+        <div class="solution-grid">
+          <article class="solution-card">
+            <div class="card-icon" aria-hidden="true">☀️</div>
+            <h3>Produksi Siang Maksimal</h3>
+            <p>Desain string dan kapasitas panel dioptimalkan agar energi matahari langsung mengambil alih beban utama pada siang hari.</p>
+            <ul class="spec-list"><li>Panel monocrystalline</li><li>Optimasi orientasi & string</li><li>Proteksi sisi DC</li></ul>
+          </article>
+          <article class="solution-card featured">
+            <div class="card-icon" aria-hidden="true">🔋</div>
+            <h3>Backup yang Terukur</h3>
+            <p>Baterai LiFePO4 disesuaikan dengan beban malam dan prioritas perangkat penting agar investasi tidak terlalu kecil atau berlebihan.</p>
+            <ul class="spec-list"><li>BMS & proteksi baterai</li><li>Prioritas beban kritis</li><li>Strategi SoC harian</li></ul>
+          </article>
+          <article class="solution-card">
+            <div class="card-icon" aria-hidden="true">📱</div>
+            <h3>Kendali & Monitoring</h3>
+            <p>Pantau produksi, konsumsi, status baterai, dan pemakaian PLN dari satu tampilan agar performa sistem mudah dievaluasi.</p>
+            <ul class="spec-list"><li>Monitoring real-time</li><li>Mode operasi fleksibel</li><li>Dukungan purnajual</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section class="features" id="tech">
-<div class="section-header">
-<h2 class="section-title">Teknologi <span>Unggul</span></h2>
-<p class="section-subtitle">Inovasi terdepan untuk masa depan yang lebih hemat</p>
-</div>
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-icon">⚡</div>
-<h3>Panel Quantum Efficiency</h3>
-<p>Panel monocrystalline PERC dengan efisiensi 22%+ menghasilkan daya maksimal per m². Teknologi anti-degradasi mempertahankan performa hingga 25 tahun.</p>
-<div class="feature-spec"><strong>SPEC:</strong> 400-550W per panel | Efisiensi 22.8% | Hemat ruang 30%</div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🔋</div>
-<h3>LiFePO4 Ultra Battery</h3>
-<p>Lithium Iron Phosphate dengan 6000+ siklus charge. Aman, tahan lama, dan ekonomis. Zero maintenance dengan BMS pintar untuk proteksi maksimal.</p>
-<div class="feature-spec"><strong>SPEC:</strong> 10-15 tahun umur | 6000+ cycles | DoD 90%</div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🤖</div>
-<h3>AI Energy Management</h3>
-<p>Sistem AI yang belajar pola konsumsi Anda untuk optimasi energi real-time. Monitoring via smartphone dengan prediksi produksi dan konsumsi.</p>
-<div class="feature-spec"><strong>FEATURE:</strong> Auto-switching | Load balancing | Remote control</div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🛡️</div>
-<h3>Instant Backup System</h3>
-<p>Switch time < 10ms untuk perlindungan peralatan sensitif. UPS-grade reliability untuk sistem kritis tanpa gangguan sedikitpun.</p>
-<div class="feature-spec"><strong>GUARANTEE:</strong> Surge protection | Auto-failover</div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">🐟</div>
-<h3>Critical 24/7 Ready</h3>
-<p>Dirancang khusus untuk aplikasi non-stop: kolam koi, pendingin 24 jam, server, CCTV. Tidak ada kompromi untuk sistem vital Anda.</p>
-<div class="feature-spec"><strong>APLIKASI:</strong> Koi pond | AC 24/7 | Cold storage | Security</div>
-</div>
-<div class="feature-card">
-<div class="feature-icon">📈</div>
-<h3>Scalable Architecture</h3>
-<p>Sistem modular yang dapat diperluas sesuai kebutuhan. Mulai dari 3kW hingga 50kW untuk residential. Investasi bertahap tanpa rebuild.</p>
-<div class="feature-spec"><strong>FLEXIBILITY:</strong> Modular design | Easy expansion</div>
-</div>
-</div>
-</section>
+    <section class="process" id="cara-kerja">
+      <div class="container">
+        <p class="eyebrow">Cara kami bekerja</p>
+        <h2 class="section-title">Dari tagihan menjadi<br>sistem yang masuk akal.</h2>
+        <div class="process-grid">
+          <article class="step"><span class="step-number">01 — ANALISIS</span><h3>Pola konsumsi</h3><p>Kami membaca tagihan, beban utama, jam pemakaian, dan target backup.</p></article>
+          <article class="step"><span class="step-number">02 — SURVEI</span><h3>Kondisi lapangan</h3><p>Atap, jalur kabel, panel listrik, dan titik pemasangan diverifikasi.</p></article>
+          <article class="step"><span class="step-number">03 — DESAIN</span><h3>Simulasi sistem</h3><p>Kapasitas panel, baterai, inverter, proteksi, serta estimasi produksi disusun.</p></article>
+          <article class="step"><span class="step-number">04 — OPERASI</span><h3>Instalasi & pantau</h3><p>Sistem diuji, diserahterimakan, lalu dipantau untuk penyetelan lanjutan.</p></article>
+        </div>
+      </div>
+    </section>
 
-<section class="calculator" id="calculator">
-<div class="section-header">
-<h2 class="section-title">Kalkulator <span>Penghematan</span></h2>
-<p class="section-subtitle">Hitung potensi penghematan dan ROI sistem Anda</p>
-</div>
-<div class="calc-container">
-<div class="calc-input">
-<div class="calc-label">
-<span>Tagihan Listrik Bulanan</span>
-<span id="billDisplay">Rp 1.200.000</span>
-</div>
-<input type="range" class="slider" id="billSlider" min="500000" max="5000000" value="1200000" step="100000">
-</div>
-<div class="calc-input">
-<div class="calc-label">
-<span>Target Penghematan</span>
-<span id="savingDisplay">80%</span>
-</div>
-<input type="range" class="slider" id="savingSlider" min="50" max="100" value="80" step="10">
-</div>
-<div class="calc-results">
-<div class="calc-result-item">
-<div class="result-label">Investasi</div>
-<div class="result-value" id="investAmount">Rp 50jt</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">Hemat/Bulan</div>
-<div class="result-value" id="monthSaving">Rp 960rb</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">Hemat/Tahun</div>
-<div class="result-value" id="yearSaving">Rp 11.5jt</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">Panel</div>
-<div class="result-value" id="panelNeeded">12 unit</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">Battery</div>
-<div class="result-value" id="batterySize">9 kWh</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">ROI</div>
-<div class="result-value" id="roiPeriod">4.3 thn</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">Total 25y</div>
-<div class="result-value" id="totalSaving">Rp 288jt</div>
-</div>
-<div class="calc-result-item">
-<div class="result-label">Profit 25y</div>
-<div class="result-value" id="netProfit">Rp 238jt</div>
-</div>
-</div>
-</div>
-</section>
+    <section class="calculator" id="kalkulator">
+      <div class="container calc-grid">
+        <div>
+          <p class="eyebrow">Estimasi awal</p>
+          <h2 class="section-title">Lihat gambaran potensi sistem Anda.</h2>
+          <p class="section-copy">Geser tagihan dan target penghematan untuk memperoleh estimasi kasar sebelum survei teknis.</p>
+          <p class="calc-disclaimer">*Simulasi ini bukan penawaran final. Hasil aktual dipengaruhi tarif, pola beban, lokasi, cuaca, luas atap, spesifikasi perangkat, dan strategi penggunaan baterai.</p>
+        </div>
+        <div class="calc-panel">
+          <div class="range-group">
+            <div class="range-head"><label for="billSlider">Tagihan listrik per bulan</label><output class="range-value" id="billDisplay">Rp1.200.000</output></div>
+            <input id="billSlider" type="range" min="500000" max="5000000" value="1200000" step="100000">
+          </div>
+          <div class="range-group">
+            <div class="range-head"><label for="savingSlider">Target pengurangan tagihan</label><output class="range-value" id="savingDisplay">70%</output></div>
+            <input id="savingSlider" type="range" min="30" max="80" value="70" step="10">
+          </div>
+          <div class="calc-results" aria-live="polite">
+            <div class="result primary"><span>Estimasi penghematan / bulan</span><strong id="monthSaving">Rp840.000</strong></div>
+            <div class="result"><span>Estimasi sistem</span><strong id="systemSize">5,0 kWp</strong></div>
+            <div class="result"><span>Panel 575 Wp</span><strong id="panelNeeded">9 unit</strong></div>
+            <div class="result"><span>Baterai awal</span><strong id="batterySize">7,5 kWh</strong></div>
+            <div class="result"><span>Penghematan / tahun</span><strong id="yearSaving">Rp10,1 jt</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="contact" id="kontak">
-<div class="section-header">
-<h2 class="section-title">Siap untuk <span>Transformasi Energi?</span></h2>
-<p class="section-subtitle">Tim engineer kami siap merancang sistem custom untuk kebutuhan Anda</p>
-</div>
-<div class="contact-grid">
-<div class="contact-info">
-<h2>Konsultasi Gratis</h2>
-<p>Analisis mendalam untuk sistem yang optimal sesuai kebutuhan spesifik Anda.</p>
-<ul class="feature-list">
-<li>Garansi Panel 25 Tahun</li>
-<li>Instalasi Profesional Bersertifikat</li>
-<li>Baterai LiFePO4 Premium 10+ Tahun</li>
-<li>24/7 Technical Support</li>
-<li>Monitoring System Real-time</li>
-<li>Maintenance Package Included</li>
-</ul>
-</div>
-<div class="contact-form">
-<form id="contactForm">
-<div class="form-group">
-<label class="form-label">Nama Lengkap</label>
-<input type="text" class="form-input" id="nama" placeholder="Nama Anda" required>
-</div>
-<div class="form-group">
-<label class="form-label">Nomor WhatsApp</label>
-<input type="tel" class="form-input" id="wa" placeholder="08xxxxxxxxxx" required>
-</div>
-<div class="form-group">
-<label class="form-label">Email</label>
-<input type="email" class="form-input" id="email" placeholder="email@example.com" required>
-</div>
-<div class="form-group">
-<label class="form-label">Tagihan Listrik (Rp/bulan)</label>
-<input type="number" class="form-input" id="tagihan" placeholder="1200000" required>
-</div>
-<div class="form-group">
-<label class="form-label">Aplikasi Kritis</label>
-<select class="form-input form-select" id="aplikasi">
-<option>Kolam Koi / Pond</option>
-<option>AC / Pendingin 24 Jam</option>
-<option>CCTV / Security System</option>
-<option>Server / Data Center</option>
-<option>Cold Storage</option>
-<option>Lainnya</option>
-</select>
-</div>
-<button type="submit" class="form-submit">KONSULTASI GRATIS SEKARANG</button>
-</form>
-</div>
-</div>
-</section>
+    <section class="contact" id="kontak">
+      <div class="container contact-shell">
+        <div class="contact-copy">
+          <p class="eyebrow">Konsultasi awal gratis</p>
+          <h2>Mulai dari data, bukan tebakan.</h2>
+          <p>Kirim kebutuhan dasar Anda. Tim kami akan menghubungi melalui WhatsApp untuk analisis awal dan menentukan apakah survei diperlukan.</p>
+          <ul class="contact-points"><li>Analisis tagihan & pola beban</li><li>Rekomendasi kapasitas awal</li><li>Estimasi produksi dan backup</li><li>Opsi sistem modular</li></ul>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="field"><label for="nama">Nama</label><input id="nama" name="nama" autocomplete="name" placeholder="Nama lengkap" required></div>
+            <div class="field"><label for="wa">Nomor WhatsApp</label><input id="wa" name="wa" type="tel" autocomplete="tel" inputmode="tel" placeholder="08xxxxxxxxxx" required></div>
+          </div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nama@email.com" required></div>
+          <div class="field"><label for="tagihan">Tagihan listrik per bulan</label><input id="tagihan" name="tagihan" type="number" inputmode="numeric" min="0" placeholder="Contoh: 1200000" required></div>
+          <div class="field"><label for="aplikasi">Kebutuhan utama</label><select id="aplikasi" name="aplikasi"><option>Rumah tinggal</option><option>AC / pendingin 24 jam</option><option>Kolam koi / pompa</option><option>CCTV / sistem keamanan</option><option>Server / peralatan kerja</option><option>Usaha / komersial</option><option>Lainnya</option></select></div>
+          <button class="btn btn-primary" type="submit">Kirim via WhatsApp <span aria-hidden="true">→</span></button>
+          <p class="privacy-note">Data hanya digunakan untuk menindaklanjuti konsultasi Anda.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-<a href="forum.html" class="forum-float">💬 Forum Q&A</a>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">☀</span><span class="brand-name">SOLARIS</span></a><p class="footer-intro">Sistem PLTS hybrid dan baterai yang dirancang berdasarkan kebutuhan nyata rumah dan usaha Anda.</p></div>
+        <div class="footer-col"><h3>Navigasi</h3><ul><li><a href="#solusi">Solusi</a></li><li><a href="#cara-kerja">Cara kerja</a></li><li><a href="#kalkulator">Kalkulator</a></li><li><a href="forum.html">Forum Q&A</a></li></ul></div>
+        <div class="footer-col"><h3>Kontak</h3><ul><li>Jakarta, Indonesia</li><li><a href="tel:+6281121163">0811-211-630</a></li><li><a href="mailto:info@solaris.id">info@solaris.id</a></li><li><a href="https://wa.me/6281121163">WhatsApp</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">© <span id="year"></span> SOLARIS PLTS. Informasi usia perangkat merupakan potensi berdasarkan spesifikasi dan kondisi pemakaian.</div>
+    </div>
+  </footer>
 
-<div class="popup-overlay" id="popup">
-<div class="popup-content">
-<div class="popup-close" onclick="closePopup()">×</div>
-<h2>🎉 Promo Eksklusif!</h2>
-<p style="color:rgba(255,255,255,0.8);margin-bottom:1.5rem;">Dapatkan diskon spesial untuk pemesanan bulan ini. Promo terbatas hanya untuk 20 customer pertama!</p>
-<div class="discount-code">
-<p style="color:rgba(255,255,255,0.6);margin-bottom:1rem;font-size:0.9rem;">Kode Promo:</p>
-<div class="code">QUANTUM2024</div>
-<p style="color:rgba(255,255,255,0.6);margin-top:1rem;font-size:0.9rem;">Diskon hingga 15% + Gratis Monitoring System</p>
-</div>
-<button class="btn-primary" style="width:100%" onclick="closePopup();document.getElementById('kontak').scrollIntoView({behavior:'smooth'})">Klaim Promo Sekarang</button>
-</div>
-</div>
+  <a class="wa-float" href="https://wa.me/6281121163?text=Halo%20SOLARIS%2C%20saya%20ingin%20konsultasi%20PLTS." target="_blank" rel="noopener" aria-label="Konsultasi melalui WhatsApp">💬 <span>WhatsApp</span></a>
 
-<footer>
-<div class="footer-content">
-<div class="footer-section">
-<h3>SOLARIS PLTS</h3>
-<p style="color:rgba(255,255,255,0.7);">Provider sistem PLTS premium dengan teknologi terdepan untuk keandalan maksimal 24/7.</p>
-</div>
-<div class="footer-section">
-<h3>Produk</h3>
-<ul>
-<li><a href="#">PLTS Residensial</a></li>
-<li><a href="#">Baterai LiFePO4</a></li>
-<li><a href="#">Smart Inverter</a></li>
-<li><a href="#">Monitoring System</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Layanan</h3>
-<ul>
-<li><a href="forum.html">Forum Q&A</a></li>
-<li><a href="#">Konsultasi & Survey</a></li>
-<li><a href="#">Instalasi Profesional</a></li>
-<li><a href="#">Maintenance Package</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Kontak</h3>
-<ul>
-<li style="color:rgba(255,255,255,0.7)">📍 Jakarta, Indonesia</li>
-<li style="color:rgba(255,255,255,0.7)">📞 0811-211-630</li>
-<li style="color:rgba(255,255,255,0.7)">📧 info@solaris.id</li>
-<li style="color:rgba(255,255,255,0.7)">⏰ 24/7 Support</li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>&copy; 2024 SOLARIS PLTS. All Rights Reserved.</p>
-</div>
-</footer>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? '×' : '☰';
+      document.body.classList.toggle('menu-open', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = '☰';
+      document.body.classList.remove('menu-open');
+    }));
 
-<script>
-const billSlider=document.getElementById('billSlider');
-const savingSlider=document.getElementById('savingSlider');
-const billDisplay=document.getElementById('billDisplay');
-const savingDisplay=document.getElementById('savingDisplay');
+    const billSlider = document.getElementById('billSlider');
+    const savingSlider = document.getElementById('savingSlider');
+    const rupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+    const shortRupiah = value => value >= 1_000_000 ? `Rp${(value / 1_000_000).toFixed(1).replace('.', ',')} jt` : rupiah.format(value);
 
-function formatRp(n){
-if(n>=1000000)return 'Rp '+(n/1000000).toFixed(1)+'jt';
-if(n>=1000)return 'Rp '+(n/1000)+'rb';
-return 'Rp '+n.toLocaleString('id-ID');
-}
+    function updateCalculator() {
+      const bill = Number(billSlider.value);
+      const target = Number(savingSlider.value);
+      const monthlySaving = bill * target / 100;
+      const monthlyKwh = bill / 1700;
+      const dailyKwh = monthlyKwh / 30;
+      const systemKw = Math.max(2, dailyKwh * target / 100 / 3.6);
+      const panels = Math.ceil(systemKw / .575);
+      const battery = Math.max(5, Math.round(systemKw * 1.5 * 2) / 2);
+      document.getElementById('billDisplay').textContent = rupiah.format(bill);
+      document.getElementById('savingDisplay').textContent = `${target}%`;
+      document.getElementById('monthSaving').textContent = rupiah.format(monthlySaving);
+      document.getElementById('yearSaving').textContent = shortRupiah(monthlySaving * 12);
+      document.getElementById('systemSize').textContent = `${systemKw.toFixed(1).replace('.', ',')} kWp`;
+      document.getElementById('panelNeeded').textContent = `${panels} unit`;
+      document.getElementById('batterySize').textContent = `${battery.toFixed(1).replace('.', ',')} kWh`;
+    }
+    billSlider.addEventListener('input', updateCalculator);
+    savingSlider.addEventListener('input', updateCalculator);
+    updateCalculator();
 
-function updateCalc(){
-const bill=parseInt(billSlider.value);
-const savingPct=parseInt(savingSlider.value);
-const investment=Math.round((bill*41.67)/1000000)*1000000;
-const monthlySaving=Math.round(bill*(savingPct/100));
-const yearlySaving=monthlySaving*12;
-const total25y=yearlySaving*25;
-const netProfit=total25y-investment;
-const roiYears=investment/yearlySaving;
-const powerNeeded=(bill/1200000)*6;
-const panels=Math.ceil(powerNeeded/0.55);
-const battery=Math.ceil(powerNeeded*1.5);
-
-billDisplay.textContent=formatRp(bill);
-savingDisplay.textContent=savingPct+'%';
-document.getElementById('investAmount').textContent=formatRp(investment);
-document.getElementById('monthSaving').textContent=formatRp(monthlySaving);
-document.getElementById('yearSaving').textContent=formatRp(yearlySaving);
-document.getElementById('totalSaving').textContent=formatRp(total25y);
-document.getElementById('netProfit').textContent=formatRp(netProfit);
-document.getElementById('panelNeeded').textContent=panels+' unit';
-document.getElementById('batterySize').textContent=battery+' kWh';
-document.getElementById('roiPeriod').textContent=roiYears.toFixed(1)+' thn';
-}
-
-billSlider.addEventListener('input',updateCalc);
-savingSlider.addEventListener('input',updateCalc);
-updateCalc();
-
-function showPopup(){
-document.getElementById('popup').classList.add('active');
-}
-function closePopup(){
-document.getElementById('popup').classList.remove('active');
-}
-
-document.getElementById('contactForm').addEventListener('submit',function(e){
-e.preventDefault();
-const nama=document.getElementById('nama').value;
-const wa=document.getElementById('wa').value;
-const email=document.getElementById('email').value;
-const tagihan=document.getElementById('tagihan').value;
-const aplikasi=document.getElementById('aplikasi').value;
-const msg=`Halo, saya ${nama}. Saya tertarik dengan SOLARIS PLTS Premium.
-
-Detail:
-• Tagihan: Rp ${parseInt(tagihan).toLocaleString('id-ID')}/bulan
-• Aplikasi: ${aplikasi}
-• Email: ${email}
-
-Mohon info lebih lanjut dan survey gratis.`;
-window.open(`https://wa.me/6281121163?text=${encodeURIComponent(msg)}`,'_blank');
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-a.addEventListener('click',function(e){
-e.preventDefault();
-const target=document.querySelector(this.getAttribute('href'));
-if(target)target.scrollIntoView({behavior:'smooth'});
-});
-});
-</script>
-
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const tagihan = Number(document.getElementById('tagihan').value || 0);
+      const message = [
+        `Halo SOLARIS, saya ${document.getElementById('nama').value}. Saya ingin konsultasi PLTS.`,
+        '',
+        `Tagihan listrik: ${rupiah.format(tagihan)}/bulan`,
+        `Kebutuhan utama: ${document.getElementById('aplikasi').value}`,
+        `Nomor saya: ${document.getElementById('wa').value}`,
+        `Email: ${document.getElementById('email').value}`,
+        '',
+        'Mohon dibantu rekomendasi awal dan langkah surveinya.'
+      ].join('\n');
+      window.open(`https://wa.me/6281121163?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
